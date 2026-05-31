@@ -1,0 +1,193 @@
+{
+    "format": "pt",
+    "sd_merge_recipe": {
+        "type": "webui",
+        "primary_model_hash": "dcbaa1bde03db0928ff0d65b03cdf73246e3aca92f448dd3ab4245906de6d462",
+        "secondary_model_hash": "dcbaa1bde03db0928ff0d65b03cdf73246e3aca92f448dd3ab4245906de6d462",
+        "tertiary_model_hash": "c519426ba544982d81df9dc5f670d7c66e254f8c1069e886b9cbf7d683c735e5",
+        "interp_method": "Add difference",
+        "multiplier": 0.2,
+        "save_as_half": false,
+        "custom_name": "",
+        "config_source": 0,
+        "bake_in_vae": "None",
+        "discard_weights": "",
+        "is_inpainting": false,
+        "is_instruct_pix2pix": false
+    },
+    "sd_merge_models": {
+        "dcbaa1bde03db0928ff0d65b03cdf73246e3aca92f448dd3ab4245906de6d462": {
+            "name": "UnrealWorld_v2.safetensors",
+            "legacy_hash": "7a3fb8db",
+            "sd_merge_recipe": {
+                "type": "webui",
+                "primary_model_hash": "2a6436006c6dc80f754bcdaca773b21351b9e13f613f123d2ce21",
+                "secondary_model_hash": null,
+                "tertiary_model_hash": null,
+                "interp_method": "Weighted sum",
+                "multiplier": 0.75,
+                "save_as_half": false,
+                "custom_name": "",
+                "config_source": 0,
+                "bake_in_vae": "None",
+                "discard_weights": "",
+                "is_inpainting": false,
+                "is_instruct_pix2pix": false
+            }
+        },
+        "2a6436006c6dc80f754bcdaca773b19c39fb72ab21351b9e13f613f123d2ce21": {
+            "name": "UnrealWorld.safetensors",
+            "legacy_hash": "c276123b",
+            "sd_merge_recipe": {
+                "type": "webui",
+                "primary_model_hash": "cbdcd871c2b3ef1b5935601fde559e0c5deadb084abfa8bc1c3f4072dcd98ef5",
+                "secondary_model_hash": "07919b495df62d7b1b2c6f1715669e1b8f9ce92e496de3a688b30744daece525",
+                "tertiary_model_hash": null,
+                "interp_method": "Weighted sum",
+                "multiplier": 0.73,
+                "save_as_half": false,
+                "custom_name": "CUAMIX_V6.1",
+                "config_source": 0,
+                "bake_in_vae": "None",
+                "discard_weights": "",
+                "is_inpainting": false,
+                "is_instruct_pix2pix": false
+            }
+        },
+        "cbdcd871c2b3ef1b5935601fde559e0c5deadb084abfa8bc1c3f4072dcd98ef5": {
+            "name": "CUAMIX_V6.safetensors",
+            "legacy_hash": "63564dc8",
+            "sd_merge_recipe": {
+                "type": "webui",
+                "primary_model_hash": "334c16637135ab02e50302d2aeb9789836d4b30df9b64070b4a19667aa0ce38a",
+                "secondary_model_hash": "07919b495df62d7b1b2c6f1715669e1b8f9ce92e496de3a688b30744daece525",
+                "tertiary_model_hash": null,
+                "interp_method": "Weighted sum",
+                "multiplier": 0.3,
+                "save_as_half": false,
+                "custom_name": "CUAMIX_V6",
+                "config_source": 0,
+                "bake_in_vae": "None",
+                "discard_weights": "",
+                "is_inpainting": false,
+                "is_instruct_pix2pix": false
+            }
+        },
+        "334c16637135ab02e50302d2aeb9789836d4b30df9b64070b4a19667aa0ce38a": {
+            "name": "CUAMIX_V5.safetensors",
+            "legacy_hash": "24e4756b",
+            "sd_merge_recipe": {
+                "type": "webui",
+                "primary_model_hash": "ed072191bb71df8e0284a86bb92c008f1b2b03460104094d91e4896714dbe3f8",
+                "secondary_model_hash": null,
+                "tertiary_model_hash": null,
+                "interp_method": "Weighted sum",
+                "multiplier": 0.4,
+                "save_as_half": false,
+                "custom_name": "CUAMIX_V5",
+                "config_source": 0,
+                "bake_in_vae": "None",
+                "discard_weights": "",
+                "is_inpainting": false,
+                "is_instruct_pix2pix": false
+            }
+        },
+        "ed072191bb71df8e0284a86bb92c008f1b2b03460104094d91e4896714dbe3f8": {
+            "name": "CUAMIX_V4.1.safetensors",
+            "legacy_hash": "b13b8475",
+            "sd_merge_recipe": {
+                "type": "webui",
+                "primary_model_hash": "6db00e363238f5959dd0a18889188b04b2fb18a91454ed750f0b117acb9e15d4",
+                "secondary_model_hash": null,
+                "tertiary_model_hash": null,
+                "interp_method": "Weighted sum",
+                "multiplier": 0.5,
+                "save_as_half": false,
+                "custom_name": "CUAMIX_V4.1",
+                "config_source": 0,
+                "bake_in_vae": "None",
+                "discard_weights": "",
+                "is_inpainting": false,
+                "is_instruct_pix2pix": false
+            }
+        },
+        "6db00e363238f5959dd0a18889188b04b2fb18a91454ed750f0b117acb9e15d4": {
+            "name": "CUAMIX_V3.safetensors",
+            "legacy_hash": "27f7c401",
+            "sd_merge_recipe": {
+                "type": "webui",
+                "primary_model_hash": null,
+                "secondary_model_hash": "f0922809efd519e81da7f6e6eb17aa0571fccc78ef85d7d54a37a9962cf12575",
+                "tertiary_model_hash": null,
+                "interp_method": "Weighted sum",
+                "multiplier": 0.3,
+                "save_as_half": false,
+                "custom_name": "CUAMIX_V3",
+                "config_source": 0,
+                "bake_in_vae": "None",
+                "discard_weights": "",
+                "is_inpainting": false,
+                "is_instruct_pix2pix": false
+            }
+        },
+        "7a4dbba12f44c854e15a338217b00193069b4a95fc08aa309f2a34cfc3096b70": {
+            "name": "cyberrealistic_v33.safetensors",
+            "legacy_hash": "d9b7cd36",
+            "sd_merge_recipe": null
+        },
+        "f0922809efd519e81da7f6e6eb17aa0571fccc78ef85d7d54a37a9962cf12575": {
+            "name": "CUAMIX_V2.safetensors",
+            "legacy_hash": "fc28860f",
+            "sd_merge_recipe": {
+                "type": "webui",
+                "primary_model_hash": "ce4d987a0e8bcf5253d2d0b045f9b12b1264dd440f4d4b05be6b56f646995b0f",
+                "secondary_model_hash": null,
+                "tertiary_model_hash": null,
+                "interp_method": "Weighted sum",
+                "multiplier": 0.15,
+                "save_as_half": false,
+                "custom_name": "CUAMIX_V2",
+                "config_source": 0,
+                "bake_in_vae": "None",
+                "discard_weights": "",
+                "is_inpainting": false,
+                "is_instruct_pix2pix": false
+            }
+        },
+        "ce4d987a0e8bcf5253d2d0b045f9b12b1264dd440f4d4b05be6b56f646995b0f": {
+            "name": "duchaitenaiart_V453.safetensors",
+            "legacy_hash": "da4d9476",
+            "sd_merge_recipe": null
+        },
+        "e4a30e4607faeb06b5d590b2ed8e092690c631da0b2becb6224d4bb5327104b7": {
+            "name": "majicmixRealistic_v6.safetensors",
+            "legacy_hash": "1d5a534e",
+            "sd_merge_recipe": null
+        },
+        "8635af1c8c454217ea0808ccd53bdbcb94ac232217d49b6e6283a6c7a1b6238b": {
+            "name": "epicphotogasm_x.safetensors",
+            "legacy_hash": "279df8fd",
+            "sd_merge_recipe": null
+        },
+        "62bb78983aaa61426b1eb79060bca5c663b94ea02657c43c21f32d58df396692": {
+            "name": "epicphotogasm_lastUnicorn.safetensors",
+            "legacy_hash": "5bbf52a0",
+            "sd_merge_recipe": null
+        },
+        "07919b495df62d7b1b2c6f1715669e1b8f9ce92e496de3a688b30744daece525": {
+            "name": "picxReal_10.safetensors",
+            "legacy_hash": "8bae17e6",
+            "sd_merge_recipe": null
+        },
+        "f47e942ad4c30d863ad7f53cb60145ffcd2118845dfa705ce8bd6b42e90c4a13": {
+            "name": "realisticVisionV60B1_v51HyperVAE.safetensors",
+            "legacy_hash": "a0f13c83",
+            "sd_merge_recipe": null
+        },
+        "c519426ba544982d81df9dc5f670d7c66e254f8c1069e886b9cbf7d683c735e5": {
+            "name": "cyberrealistic_v70.safetensors",
+            "legacy_hash": "654b928c",
+            "sd_merge_recipe": null
+        }
+    }
+}
