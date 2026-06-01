@@ -38,7 +38,7 @@ To ensure fair comparison across versions, all evaluations followed a strict con
 - **Fixed seed** across all versions — same seed used from base through UnrealWorld v3
 - **Fixed prompt set** — same positive and negative prompts across all evaluations
 - **Fixed sampler settings** — steps, CFG scale, and resolution held constant
-- **4 reference checkpoints** evaluated per comparison: `duchaitenaiart_V453` (base) → `CUAMIX_V5` → `UnrealWorld_v1` (=CUAMIX_V6.1) → `UnrealWorld_v3`
+- **4 reference checkpoints** evaluated per comparison: `Base` (duchaitenaiart_V453) → `CUAMIX_V5` → `UnrealWorld_v1` (=CUAMIX_V6.1) → `UnrealWorld_v3`
 - **Pixel-level manual assessment** focused on:
   - `facial realism` — skin micro-detail, pore texture, subsurface scattering appearance
   - `depth of field` — background separation, bokeh quality, focal plane clarity
