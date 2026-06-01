@@ -58,7 +58,7 @@ To ensure fair comparison across versions, all evaluations followed a strict con
 ### Version Tree
 
 ```
-duchaitenaiart_V453  (base)
+BASE  (duchaitenaiart_V453)
     └── CUAMIX_V2   (+ [undocumented], Weighted Sum 0.15)
         └── CUAMIX_V3   (+ majicmixRealistic_v6, Weighted Sum 0.30)
             └── CUAMIX_V4.1  (+ [undocumented], Weighted Sum 0.50)
@@ -81,64 +81,58 @@ Full merge recipe with model hashes: [`merge_recipe.json`](./merge_recipe.json)
 ## Results
 
 All comparisons use the same 4 reference checkpoints in consistent order:
-**Base (`duchaitenaiart_V453`) → V5 → UnrealWorld_v1 (=V6.1) → UnrealWorld_v3**
+**Base → V5 → UnrealWorld_v1 → UnrealWorld_v3**
 
 ---
 
 ### Full Portrait Comparison
 
 <!-- 📸 ADD IMAGE HERE -->
-<!-- Format: 4-column side-by-side, same seed, same prompt -->
-<!-- Columns: duchaitenaiart_V453 | CUAMIX_V5 | UnrealWorld_v1 | UnrealWorld_v3 -->
-<!-- Recommended resolution: 512x768 or 768x1024 per column -->
-<!-- Label each column with checkpoint name -->
-```
-[ INSERT: Full portrait — Base vs V5 vs UnrealWorld_v1 vs UnrealWorld_v3 ]
-```
+| Base | CUAMIX V5 | UnrealWorld v1 | UnrealWorld v3 |
+|---|---|---|---|
+|<img width="200"  alt="00000-3779303083" src="https://github.com/user-attachments/assets/de594cac-6539-4adc-8197-1f79bbcec22f" /> | <img width="200"  alt="00001-3779303083" src="https://github.com/user-attachments/assets/18a19d7e-5967-4a14-ae02-5c0a02ae1315" /> | <img width="200"  alt="00002-3779303083" src="https://github.com/user-attachments/assets/3c8b6526-096e-48ff-a372-813f07038363" /> | <img width="200"  alt="00003-3779303083" src="https://github.com/user-attachments/assets/ab2cf38b-0fa6-4b1c-ac64-c181dcfcf922">|
+| <div align="center">WS baseline</div> | <div align="center">WS 0.40</div> | <div align="center">WS 0.73 + picxReal</div> | <div align="center">Add Diff 0.20</div> |
 
-**Observation:** Progressive Weighted Sum iterations (V2→V6.1) improved anatomical coherence incrementally. The most visually distinct improvement occurred at the Add Difference stage (UnrealWorld v2→v3): contrast, facial depth-of-field, and skin micro-detail showed step-change improvement not achievable through ratio tuning alone.
+
+
+**Observation:** Weighted Sum phase (Base→V5) improved anatomical coherence and reduced common SD artifacts incrementally. The most significant qualitative shift occurred at UnrealWorld_v1 (CUAMIX_V6.1, WS 0.73 + picxReal_10): skin contrast improved markedly, color tone became more naturalistic, and the characteristic "plastic" appearance common in base Stable Diffusion outputs was substantially reduced. Add Difference stage (UnrealWorld_v3) further enhanced facial realism and depth-of-field separation beyond what ratio tuning alone achieved.
 
 ---
 
 ### Facial Realism & Depth of Field
+| Base | CUAMIX V5 | UnrealWorld v1 | UnrealWorld v3 |
+|---|---|---|---|
+| <img width="200" alt="00004-493936146" src="https://github.com/user-attachments/assets/d319c006-1f9d-48a8-8c37-03f7c335463c" /> | <img width="200" alt="00005-493936146" src="https://github.com/user-attachments/assets/2f1dbdeb-47af-4f05-864b-63100afd2ba8" /> | <img width="200" alt="00006-493936146" src="https://github.com/user-attachments/assets/bb008d74-2f90-4a50-9d1f-e9a735d75294" /> | <img width="200" alt="00008-493936146" src="https://github.com/user-attachments/assets/663e8983-083f-46bd-81b9-b36ddbfc35ba" /> | 
+| <div align="center">WS baseline</div> | <div align="center">WS 0.40</div> | <div align="center">WS 0.73 + picxReal</div> | <div align="center">Add Diff 0.20</div> |
 
-<!-- 📸 ADD IMAGE HERE -->
-<!-- Format: Face crop at 100% zoom, same crop region across all 4 versions -->
-<!-- Columns: duchaitenaiart_V453 | CUAMIX_V5 | UnrealWorld_v1 | UnrealWorld_v3 -->
-<!-- Focus: skin texture, DoF blur on background, facial depth rendering -->
-```
-[ INSERT: Face crop — Base vs V5 vs UnrealWorld_v1 vs UnrealWorld_v3 ]
-```
 
-**Observation:** Add Difference injection of `cyberrealistic_v70` at multiplier 0.20 produced the clearest improvement in facial realism — skin micro-detail became visible, depth-of-field separation sharpened, and facial depth cues (nose bridge, cheekbone shadow) became more pronounced. These improvements were not observed incrementally during the Weighted Sum phase, suggesting Add Difference captures a qualitatively different region of weight space.
+**Observation:** Base model shows strong anime-influenced characteristics — overly smooth skin, plastic rendering, and unnatural facial proportions. CUAMIX V5 (WS 0.40) shifted toward human realism but retained flat skin rendering. The most significant qualitative jump occurred at UnrealWorld_v1 (WS 0.73 + picxReal_10): plastic appearance was substantially eliminated, skin tone became warmer and more naturalistic, facial depth cues (cheekbone shadow, nose bridge definition) emerged, and depth-of-field background separation became visible. UnrealWorld_v3 (Add Difference 0.20) further increased contrast, introduced skin micro-detail, and deepened DoF separation — properties not achievable through Weighted Sum ratio tuning alone.
 
 ---
 
 ### Eye Region — Pixel-Level Detail
 
-<!-- 📸 ADD IMAGE HERE -->
-<!-- Format: Eye crop at 100% zoom, same position across all 4 versions -->
-<!-- Columns: duchaitenaiart_V453 | CUAMIX_V5 | UnrealWorld_v1 | UnrealWorld_v3 -->
-<!-- Focus: iris clarity, specular highlight, symmetry -->
-```
-[ INSERT: Eye crop — Base vs V5 vs UnrealWorld_v1 vs UnrealWorld_v3 ]
-```
+| Base | CUAMIX V5 | UnrealWorld v1 | UnrealWorld v3 |
+|---|---|---|---|
+|<img width="200" alt="00009-4108508133_cr" src="https://github.com/user-attachments/assets/1ef6d1c5-8d2d-4120-a1a1-2c0af608d31a" /> | <img width="200" alt="00010-4108508133_cr" src="https://github.com/user-attachments/assets/ac451c43-6d59-4fc6-b5cf-7c8949f8b2fa" /> | <img width="200" alt="00011-4108508133_cr" src="https://github.com/user-attachments/assets/a78c2bf2-7b1b-4753-997d-bd58a84b6389" /> | <img width="200" alt="00012-4108508133_cr" src="https://github.com/user-attachments/assets/1337bd17-a711-4513-b707-6df02744e5b1" /> |
+| <div align="center">WS baseline</div> | <div align="center">WS 0.40</div> | <div align="center">WS 0.73 + picxReal</div> | <div align="center">Add Diff 0.20</div> |
 
-**Observation:** Specular highlight retention and iris boundary definition improved with Weighted Sum ratio increase (V6.1 at 0.73). Add Difference preserved these gains while adding contrast depth to the iris that Weighted Sum alone did not produce.
+**Observation:** Base model exhibits anime-characteristic oversized iris with minimal specular complexity. CUAMIX V5 (WS 0.40) normalized iris proportions and introduced basic lash definition. UnrealWorld_v1 
+(WS 0.73 + picxReal_10) produced the largest single improvement in eye realism — iris texture became multi-layered, specular highlights gained natural shape and depth, and individual eyelash strands became 
+distinguishable. UnrealWorld_v3 (Add Difference 0.20) further increased contrast and sharpness across the eye region, with visible pore texture and natural skin micro-detail emerging around the eye area — properties absent in all Weighted Sum versions.
 
 ---
 
 ### Hand & Finger Anatomy
+| Base | CUAMIX V5 | UnrealWorld v1 | UnrealWorld v3 |
+|---|---|---|---|
+|<img width="200" alt="00351-745118057_cr" src="https://github.com/user-attachments/assets/4ab8fcb9-f7fe-47f7-be20-f345b9d9305d" /> | <img width="200" alt="00350-745118057_cr" src="https://github.com/user-attachments/assets/55df0621-d972-415d-a36b-184c1c8d057b" /> | <img width="200" alt="00349-745118057_cr" src="https://github.com/user-attachments/assets/4f4215c7-d67d-4f3d-a677-07c0d52aa28d" /> | <img width="200" alt="00347-745118057_cr" src="https://github.com/user-attachments/assets/d88e0104-ed64-4d2d-9c9f-6eaf59a3fee4" /> |
+| <div align="center">WS baseline</div> | <div align="center">WS 0.40</div> | <div align="center">WS 0.73 + picxReal</div> | <div align="center">Add Diff 0.20</div> |
 
-<!-- 📸 ADD IMAGE HERE -->
-<!-- Format: Hand/finger crop at 100% zoom, same prompt and seed -->
-<!-- Columns: duchaitenaiart_V453 | CUAMIX_V5 | UnrealWorld_v1 | UnrealWorld_v3 -->
-<!-- Focus: digit count, finger separation, tip sharpness -->
-```
-[ INSERT: Hand/finger crop — Base vs V5 vs UnrealWorld_v1 vs UnrealWorld_v3 ]
-```
 
-**Observation:** Addition of `picxReal_10` at V6 stage contributed most significantly to digit count accuracy. Add Difference stage maintained these gains without regression.
+
+**Observation:** Base model rendered 5 digits with flat, plastic skin and minimal surface detail. CUAMIX V5 (WS 0.40) and UnrealWorld_v1 (WS 0.73 + picxReal_10) both exhibited a missing finger artifact — only 4 digits clearly rendered — suggesting that Weighted Sum interpolation at these ratios introduced anatomical regression in digit count despite improving skin tone and surface quality. UnrealWorld_v3 (Add Difference 0.20) restored correct 5-finger anatomy while simultaneously producing the strongest surface detail across all versions — visible knuckle definition, subtle vein structure, and natural skin contrast. This result suggests Add Difference injection operates on a qualitatively different region of weight space, recovering anatomical accuracy that Weighted Sum phase had degraded.
+
 
 ---
 
@@ -146,26 +140,77 @@ All comparisons use the same 4 reference checkpoints in consistent order:
 
 | Finding | Detail |
 |---|---|
-| Most impactful method | **Add Difference** — produced the largest single-step improvement in contrast, DoF, and facial realism |
-| Add Difference optimal multiplier | **0.20** — sufficient for style injection; higher values introduced oversaturation artifacts |
-| Optimal Weighted Sum ratio | **0.73** (V6.1) — best balance of detail retention vs style coherence in linear interpolation phase |
-| Most impactful WS merge step | Addition of `picxReal_10` at V6 — largest anatomical accuracy gain within WS phase |
-| Diminishing returns threshold | Weighted Sum ratios above 0.75 introduced color cast artifacts in skin tones |
-| Method distinction | Weighted Sum produced incremental, continuous improvements; Add Difference produced qualitative step-change in contrast and depth rendering |
-| Fixed seed validation | Confirmed improvements were model-driven, not prompt or seed variation |
-
+| Most impactful single step | **UnrealWorld_v1 (WS 0.73 + picxReal_10)** — largest qualitative jump within Weighted Sum phase: eliminated plastic skin rendering, restored natural skin tone, introduced facial depth cues and DoF separation |
+| Most impactful method | **Add Difference (0.20)** — produced step-change in contrast, skin micro-detail, pore texture, and eye region sharpness not achievable through ratio tuning alone |
+| Unexpected WS regression | CUAMIX V5 and UnrealWorld_v1 both exhibited **missing finger artifact** (4 digits instead of 5) — Weighted Sum interpolation improved surface quality while simultaneously degrading digit count accuracy |
+| Add Difference recovery | UnrealWorld_v3 (Add Diff 0.20) **restored correct 5-finger anatomy** while producing strongest surface detail — suggests Add Difference operates on qualitatively different weight-space dimensions than Weighted Sum |
+| Add Difference optimal multiplier | **0.20** — sufficient for contrast and detail injection; higher values risk oversaturation in skin tones |
+| Plastic appearance elimination | Characteristic SD "plastic" skin rendering was substantially reduced at UnrealWorld_v1 and fully resolved at UnrealWorld_v3 |
+| Fixed seed validation | Same seed across all checkpoints confirmed improvements are model-driven, not prompt or seed variation |
 ---
 
 ## Discussion
 
-The results suggest that the two interpolation methods operate on qualitatively different dimensions of the model's learned representations:
+Three parallel comparisons — full portrait, eye region, and hand anatomy 
+— reveal a consistent pattern across all evaluated regions:
 
-- **Weighted Sum** smoothly interpolates between two checkpoints' weight distributions — effective for fine-tuning stylistic balance and anatomical accuracy incrementally.
-- **Add Difference** injects a directional delta vector into the base model — effective for introducing new perceptual properties (contrast response, depth rendering) that were absent in the base and not reachable through ratio tuning alone.
+**Weighted Sum phase (Base → V5 → UnrealWorld_v1)** produced continuous, 
+incremental improvements in skin tone naturalness, facial proportions, 
+and stylistic realism. However, this phase also introduced an unexpected 
+anatomical regression: both V5 and UnrealWorld_v1 rendered only 4 fingers 
+instead of 5, suggesting that linear weight interpolation at these ratios 
+degraded digit count accuracy despite improving surface quality. This 
+represents a classic property trade-off — consistent with findings in 
+weight-space interpolation literature where no single λ universally 
+optimizes across all output dimensions simultaneously.
 
-This distinction is consistent with findings in the weight-space interpolation literature, where task vector arithmetic (the conceptual basis of Add Difference) is shown to operate along semantically meaningful directions in parameter space, rather than simply blending two distributions.
+**Add Difference phase (UnrealWorld_v3)** produced qualitatively distinct 
+improvements across all three evaluated regions: skin micro-detail and 
+pore texture in facial rendering, iris contrast and eye area depth, and 
+restoration of correct finger anatomy alongside stronger surface detail. 
+These improvements were not reachable through Weighted Sum ratio tuning 
+alone — supporting the interpretation that Add Difference, as a directional 
+delta injection rather than a linear blend, operates along semantically 
+distinct directions in weight space. This is analogous to task vector 
+arithmetic in the NLP literature, where directional parameter deltas have 
+been shown to preserve or restore model properties that interpolation 
+degrades.
 
-An open question not explored in this study is whether **SLERP** (Spherical Linear Interpolation) — which interpolates on a hypersphere rather than linearly — would produce different trade-off curves than standard Weighted Sum, particularly in preserving fine perceptual detail at higher merge ratios.
+**Why Add Difference recovers what Weighted Sum degrades:**
+
+Weighted Sum at any ratio λ produces a linear blend of two weight 
+distributions — the result is a weighted average, which inherently 
+smooths and compresses the extremes of both models. When applied 
+iteratively, this progressive blending can degrade specific encoded 
+representations (such as finger anatomy) even while improving others 
+(such as skin tone). There is no mechanism within Weighted Sum to 
+selectively preserve or restore a degraded property.
+
+Add Difference operates differently. The vector `(B - C) × multiplier` 
+encodes a **directional delta** — specifically, what model B has that 
+model C does not. 
+In this study: 
+
+`result = UnrealWorld_v1 + (cyberrealistic_v70 - UnrealWorld_v1) × 0.20.`
+
+This delta captured contrast response, skin micro-detail, and anatomical 
+detail present in `cyberrealistic_v70` but absent or degraded in 
+`UnrealWorld_v1`. Injecting 0.20 of this vector transferred those 
+properties without re-blending the entire weight distribution — which 
+is why finger anatomy was restored while surface quality gains from the 
+Weighted Sum phase were preserved rather than overwritten.
+
+This mechanism is conceptually identical to task vector arithmetic 
+(Ilharco et al., 2023), referenced in Farn et al. (EMNLP 2025): 
+directional parameter deltas encode specific capabilities along 
+semantically meaningful directions in weight space, enabling targeted 
+property injection rather than global distribution blending.
+
+An open question not explored in this study is whether **SLERP** 
+(Spherical Linear Interpolation) would produce different trade-off curves 
+— particularly whether it could preserve anatomical accuracy (digit count) 
+during the ratio-increase phase where standard Weighted Sum introduced 
+regression.
 
 ---
 
@@ -181,20 +226,6 @@ An open question not explored in this study is whether **SLERP** (Spherical Line
 | epicphotogasm_x / lastUnicorn | Detail sharpness reference (tested, not used in final chain) |
 | realisticVisionV60B1 | Secondary realism reference (tested, not used in final chain) |
 
----
-
-## Repository Structure
-
-```
-.
-├── README.md               ← This document
-├── merge_recipe.json       ← Full merge tree with model hashes
-└── comparisons/
-    ├── full_portrait/      ← ADD: Full portrait 4-column comparison
-    ├── face_dof/           ← ADD: Facial realism & depth-of-field crops
-    ├── eye_crops/          ← ADD: Eye region pixel-level crops
-    └── hand_crops/         ← ADD: Hand/finger anatomy crops
-```
 
 ---
 
@@ -202,12 +233,8 @@ An open question not explored in this study is whether **SLERP** (Spherical Line
 
 The final model series (UnrealWorld v1–v3) was published on CivitAI and reached **7,100+ organic downloads** from global users, providing large-scale real-world validation of the merge optimization outcomes documented here. Accumulated over **17,000,000 views** in 2026 across published works using these models.
 
-→ [View on CivitAI](https://civitai.com/user/NxtAI)
 
 ---
 
 ## Author
-
 **Nguyen Huu Phuc**  
-B.Sc. Computer Science — Ton Duc Thang University  
-[GitHub](https://github.com/huuphuc342) · [CivitAI](https://civitai.com/user/NxtAI) · [LinkedIn](https://linkedin.com/in/phucnguyenhuu-it/)
