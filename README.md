@@ -235,6 +235,21 @@ The final model series (UnrealWorld v1–v3) was published on CivitAI and reache
 
 
 ---
+## References
+
+- Farn, H., Su, H., Kumar, S. H., Sahay, S., Chen, S.-T., & Lee, H.-Y. (2025). 
+  *Safeguard Fine-Tuned LLMs Through Pre- and Post-Tuning Model Merging.* 
+  Findings of EMNLP 2025.
+
+- Ilharco, G., Ribeiro, M. T., Wortsman, M., Schmidt, L., Hajishirzi, H., & Farhadi, A. (2023). 
+  *Editing Models with Task Arithmetic.* 
+  ICLR 2023.
+
+- Wortsman, M., Ilharco, G., Kim, J. W., Li, M., Hajishirzi, H., Farhadi, A., 
+  Namkoong, H., & Schmidt, L. (2022). 
+  *Robust Fine-Tuning of Zero-Shot Models (WiSE-FT).* 
+  CVPR 2022.
+
 
 ## Author
 **Nguyen Huu Phuc**  
